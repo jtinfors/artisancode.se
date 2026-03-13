@@ -251,7 +251,7 @@ nav a:hover {
 
 /* --- Pricing --- */
 .pricing {
-  padding: 5rem 0;
+  padding: 0 0 5rem 0;
   background-color: var(--linen);
 }
 
