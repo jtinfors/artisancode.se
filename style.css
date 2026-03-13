@@ -1,0 +1,365 @@
+/* ===========================
+   Artisan Code — style.css
+   Inspired by traditional woodworking & furniture craft
+   =========================== */
+
+/* --- Palette & tokens --- */
+:root {
+  --oak:        #5c4033;
+  --oak-light:  #7a5c4f;
+  --walnut:     #3b2a1a;
+  --linen:      #f5f0e8;
+  --parchment:  #ebe3d5;
+  --cream:      #faf7f2;
+  --brass:      #b08d57;
+  --charcoal:   #2c2420;
+  --text:       #3d3029;
+  --text-muted: #7a6e63;
+
+  --font-body:    "Georgia", "Times New Roman", serif;
+  --font-heading: "Georgia", "Times New Roman", serif;
+  --font-mono:    "Courier New", "Courier", monospace;
+
+  --container: 56rem;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--cream);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--walnut);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--oak);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--oak);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--brass);
+}
+
+/* --- Button --- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--oak);
+  color: var(--linen);
+  border: 1px solid var(--oak);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--oak);
+  border-bottom-color: var(--oak);
+}
+
+/* --- Header --- */
+.site-header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--parchment);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-mark {
+  font-size: 1.3rem;
+  color: var(--brass);
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--walnut);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: var(--oak);
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 6rem 0 5rem;
+  text-align: center;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--brass);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  max-width: 34rem;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* --- Divider (wood grain line) --- */
+.divider {
+  padding: 0.5rem 0;
+  color: var(--parchment);
+}
+
+.grain-line {
+  width: 100%;
+  display: block;
+}
+
+/* --- Services --- */
+.services {
+  padding: 5rem 0;
+  background-color: var(--linen);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--cream);
+  border: 1px solid var(--parchment);
+  padding: 2rem 1.75rem;
+  transition: box-shadow 0.25s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(92, 64, 51, 0.08);
+}
+
+.card-icon {
+  font-size: 1.6rem;
+  color: var(--brass);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* --- Pricing --- */
+.pricing {
+  padding: 5rem 0;
+  background-color: var(--linen);
+}
+
+.pricing-block {
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--cream);
+  border: 1px solid var(--parchment);
+  padding: 3rem 2.5rem;
+}
+
+.pricing-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-amount {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--walnut);
+  line-height: 1.1;
+}
+
+.pricing-unit {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.pricing-details {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--parchment);
+  padding-top: 1.5rem;
+}
+
+.pricing-details li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pricing-details li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--brass);
+}
+
+/* --- Philosophy --- */
+.philosophy {
+  padding: 5rem 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2.5rem 3rem;
+  margin-top: 1rem;
+}
+
+.philosophy-item {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--brass);
+}
+
+.philosophy-item p {
+  font-size: 0.95rem;
+}
+
+/* --- Contact --- */
+.contact {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: var(--linen);
+}
+
+.contact p {
+  max-width: 30rem;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+}
+
+.contact .btn {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--parchment);
+}
+
+.site-footer p {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  nav {
+    gap: 1.25rem;
+  }
+
+  .hero {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+}
