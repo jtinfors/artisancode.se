@@ -20,7 +20,7 @@
   --font-heading: "Georgia", "Times New Roman", serif;
   --font-mono:    "Courier New", "Courier", monospace;
 
-  --container: 56rem;
+  --container: 100%;
 }
 
 /* --- Reset --- */
@@ -185,7 +185,7 @@ nav a:hover {
 }
 
 .hero-image {
-  max-width: 38rem;
+  max-width: 100%;
   margin: 0 auto 2.5rem;
 }
 
