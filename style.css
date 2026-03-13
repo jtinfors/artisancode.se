@@ -166,7 +166,6 @@ nav a:hover {
 
 .tagline {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--brass);
