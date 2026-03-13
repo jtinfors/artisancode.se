@@ -184,6 +184,26 @@ nav a:hover {
   line-height: 1.8;
 }
 
+.hero-image {
+  max-width: 38rem;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--parchment);
+  box-shadow: 0 8px 30px rgba(59, 42, 26, 0.12);
+}
+
+.hero-image figcaption {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
 /* --- Divider (wood grain line) --- */
 .divider {
   padding: 0.5rem 0;
