@@ -160,7 +160,7 @@ nav a:hover {
 
 /* --- Hero --- */
 .hero {
-  padding: 6rem 0 5rem;
+  padding: 2rem 0 5rem;
   text-align: center;
 }
 
@@ -169,7 +169,7 @@ nav a:hover {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--brass);
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
 }
 
 .hero h1 {
@@ -216,7 +216,7 @@ nav a:hover {
 
 /* --- Services --- */
 .services {
-  padding: 5rem 0;
+  padding: 2rem 0;
   background-color: var(--linen);
 }
 
@@ -312,7 +312,7 @@ nav a:hover {
 
 /* --- Philosophy --- */
 .philosophy {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .philosophy-grid {
@@ -371,11 +371,12 @@ nav a:hover {
   }
 
   nav {
+    display: none;
     gap: 1.25rem;
   }
 
   .hero {
-    padding: 4rem 0 3.5rem;
+    padding: 1rem 0 3.5rem;
   }
 
   .philosophy-grid {
