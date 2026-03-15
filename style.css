@@ -195,6 +195,38 @@ nav a:hover {
   box-shadow: 0 8px 30px rgba(59, 42, 26, 0.12);
 }
 
+/* --- Carousel --- */
+.carousel {
+  position: relative;
+  display: block;
+}
+
+.carousel-img {
+  transition: opacity 0.25s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(59, 42, 26, 0.55);
+  color: var(--linen);
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgba(59, 42, 26, 0.85);
+}
+
+.carousel-prev { left: 0.75rem; }
+.carousel-next { right: 0.75rem; }
+
 .hero-image figcaption {
   font-size: 0.8rem;
   font-style: italic;
