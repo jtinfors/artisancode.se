@@ -160,7 +160,6 @@ nav a:hover {
 
 /* --- Hero --- */
 .hero {
-  padding: 2rem 0 5rem;
   text-align: center;
 }
 
@@ -226,6 +225,17 @@ nav a:hover {
 
 .carousel-prev { left: 0.75rem; }
 .carousel-next { right: 0.75rem; }
+
+.carousel-progress {
+  height: 2px;
+  background: var(--parchment);
+}
+
+.carousel-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--brass);
+}
 
 .hero-image figcaption {
   font-size: 0.8rem;
@@ -405,10 +415,6 @@ nav a:hover {
   nav {
     display: none;
     gap: 1.25rem;
-  }
-
-  .hero {
-    padding: 1rem 0 3.5rem;
   }
 
   .philosophy-grid {

@@ -49,39 +49,66 @@
       <p class="hero-sub">AI can generate a thousand functions before your coffee brews. None of them will carry a point of view, a considered trade-off, or the scar tissue of hard-won experience. Ours do — and the coffee is better too.</p>
       <figure class="hero-image">
         <div class="carousel" id="heroCarousel">
-          <button class="carousel-btn carousel-prev" aria-label="Previous image">&#8592;</button>
           <img class="carousel-img" src="./images/Gemini_Generated_Image_32b7q432b7q432b7.png" alt="The founder at work, coding like its 1999">
-          <button class="carousel-btn carousel-next" aria-label="Next image">&#8594;</button>
         </div>
-        <figcaption>Actual photo of our development environment. Yes, that is Sonic Youth playing in the background!</figcaption>
+        <div class="carousel-progress"><div class="carousel-progress-bar" id="carouselProgressBar"></div></div>
+        <figcaption class="figcaption">Actual photo of our development environment. Yes, that is Sonic Youth playing in me headphones</figcaption>
       </figure>
       <script>
         (function () {
+          var INTERVAL = 5000;
           var images = [
-            "./images/Gemini_Generated_Image_32b7q432b7q432b7.png",
-            "./images/Gemini_Generated_Image_yaxc8eyaxc8eyaxc.png",
-            "./images/Gemini_Generated_Image_7pctj97pctj97pct.png",
-            "./images/Gemini_Generated_Image_jr6apcjr6apcjr6a.png"
+            {
+              image: "./images/Gemini_Generated_Image_32b7q432b7q432b7.png",
+              text: "Actual photo of our development environment. Yes, that is Sonic Youth playing in me headphones!"
+            },
+            {
+              image: "./images/Gemini_Generated_Image_79h5dr79h5dr79h5.png",
+              text: "Planning mode require('pipe')"
+            },
+            {
+              image: "./images/Gemini_Generated_Image_yaxc8eyaxc8eyaxc.png",
+              text: "Plannin mode is best implemented with post-its"
+            },
+            {
+              image: "./images/Gemini_Generated_Image_7pctj97pctj97pct.png",
+              text: "We first write down our code on paper ..and then transfered it to a laptop"
+            },
+            {
+              image: "./images/Gemini_Generated_Image_jr6apcjr6apcjr6a.png",
+              text: "Code is written in a mob. That way we can charge more"
+            }
           ];
           var current = 0;
           var img = document.querySelector("#heroCarousel .carousel-img");
+          var bar = document.getElementById("carouselProgressBar");
+
+          function resetProgress() {
+            bar.style.transition = "none";
+            bar.style.width = "0%";
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                bar.style.transition = "width " + INTERVAL + "ms linear";
+                bar.style.width = "100%";
+              });
+            });
+          }
 
           function show(index) {
             current = (index + images.length) % images.length;
             img.style.opacity = "0";
             setTimeout(function () {
-              img.src = images[current];
+              img.src = images[current].image;
               img.style.opacity = "1";
+              document.querySelector(".figcaption").innerHTML = images[current].text
             }, 250);
+            resetProgress();
           }
 
-          document.querySelector(".carousel-prev").addEventListener("click", function () { show(current - 1); });
-          document.querySelector(".carousel-next").addEventListener("click", function () { show(current + 1); });
-
-          setInterval(function () { show(current + 1); }, 4000);
+          resetProgress();
+          setInterval(function () { show(current + 1); }, INTERVAL);
         })();
       </script>
-      <a href="#contact" class="btn">☕️ Buy us SlowBrew</a>
     </div>
   </section>
 
