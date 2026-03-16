@@ -117,16 +117,20 @@
             var cached = cache[current];
             function swap() {
               img.src = cached.src;
-              img.style.opacity = "1";
               document.querySelector(".figcaption").innerHTML = images[current].text;
+              // Wait a frame so the new src is set, then fade in
+              requestAnimationFrame(function () {
+                img.style.opacity = "1";
+              });
             }
+            // Wait for fade-out (600ms matches CSS transition)
             setTimeout(function () {
               if (cached.complete) {
                 swap();
               } else {
                 cached.onload = swap;
               }
-            }, 250);
+            }, 600);
             resetProgress();
           }
 
