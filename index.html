@@ -51,8 +51,10 @@
 
   <section class="hero">
     <div class="container">
-      <p class="tagline">zero ai programming!</p>
-      <h1>Handcrafted code<br /> using traditional tools!</h1>
+      <p class="tagline">Zero AI!</p>
+      <div class="typewriter-rotate">
+        <h1><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
+      </div>
       <p class="hero-sub">AI can generate a thousand functions before your coffee brews. None of them will carry a point of view, a considered trade-off, or the scar tissue of hard-won experience. Ours do — and the coffee is better too.</p>
       <figure class="hero-image">
         <div class="carousel" id="heroCarousel">
@@ -221,5 +223,51 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var phrases = [
+        "Real code By real humans!",
+        "Every semicolon lovingly placed by a human hand.",
+        "Handicrafted code by handy humans!",
+        "Code exclusivly crafted by real coders"
+      ];
+      var el = document.getElementById('typewriter-text');
+      var current = 0;
+      var charIndex = 0;
+      var typing = true;
+      var TYPING_SPEED = 60;
+      var PAUSE_AFTER = 3000;
+      var ERASE_SPEED = 30;
+
+      function tick() {
+        if (typing) {
+          if (charIndex < phrases[current].length) {
+            el.textContent = phrases[current].substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(tick, TYPING_SPEED);
+          } else {
+            // Done typing, pause then erase
+            setTimeout(function () {
+              typing = false;
+              tick();
+            }, PAUSE_AFTER);
+          }
+        } else {
+          if (charIndex > 0) {
+            charIndex--;
+            el.textContent = phrases[current].substring(0, charIndex);
+            setTimeout(tick, ERASE_SPEED);
+          } else {
+            // Done erasing, move to next phrase
+            current = (current + 1) % phrases.length;
+            typing = true;
+            setTimeout(tick, 400);
+          }
+        }
+      }
+
+      tick();
+    })();
+  </script>
 </body>
 </html>
