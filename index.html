@@ -257,23 +257,12 @@
             el.textContent = phrases[current].substring(0, charIndex + 1);
             charIndex++;
             setTimeout(tick, TYPING_SPEED);
-          } else {
-            // Done typing, pause then erase
-            setTimeout(function () {
-              typing = false;
-              tick();
-            }, PAUSE_AFTER);
           }
         } else {
           if (charIndex > 0) {
             charIndex--;
             el.textContent = phrases[current].substring(0, charIndex);
             setTimeout(tick, ERASE_SPEED);
-          } else {
-            // Done erasing, move to next phrase
-            current = (current + 1) % phrases.length;
-            typing = true;
-            setTimeout(tick, 400);
           }
         }
       }
