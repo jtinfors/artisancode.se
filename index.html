@@ -71,9 +71,7 @@
     <div class="container">
       <div class="hero-content">
         <p class="tagline">100% Human-Written Code</p>
-        <div class="typewriter-rotate">
-          <h1><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
-        </div>
+          <h1><span id="typewriter-text">Real code by real humans </span><span class="typewriter-cursor">|</span></h1>
         <p class="hero-sub">
           In the age of AI slop we offer premium top-notch handwritten code made by real humans.
           AI can generate a thousand functions before your drop coffee brews. None of them will carry a point of view, a considered trade-off, or the scar tissue of hard-won experience. Ours do — and the coffee is better too.
@@ -334,50 +332,6 @@
     </div>
   </footer>
 
-  <!-- Typewriter -->
-  <script>
-    (function () {
-      var phrases = [
-        "Real code by real humans.",
-        "Every semicolon lovingly placed by hand.",
-        "Handcrafted code by handy humans.",
-        "Code exclusively crafted by real coders."
-      ];
-      var el = document.getElementById('typewriter-text');
-      var current = 0;
-      var charIndex = 0;
-      var typing = true;
-      var TYPING_SPEED = 60;
-      var PAUSE_AFTER = 3000;
-      var ERASE_SPEED = 30;
-
-      function tick() {
-        if (typing) {
-          if (charIndex < phrases[current].length) {
-            el.textContent = phrases[current].substring(0, charIndex + 1);
-            charIndex++;
-            setTimeout(tick, TYPING_SPEED);
-          <!--} else {-->
-            <!--setTimeout(function () { typing = false; tick(); }, PAUSE_AFTER);-->
-          }
-        } else {
-          if (charIndex > 0) {
-            charIndex--;
-            el.textContent = phrases[current].substring(0, charIndex);
-            setTimeout(tick, ERASE_SPEED);
-          <!--} else {-->
-            <!--current = (current + 1) % phrases.length;-->
-            <!--typing = true;-->
-            <!--setTimeout(tick, 400);-->
-          }
-        }
-      }
-
-      tick();
-    })();
-  </script>
-
-  <!-- Scroll reveal -->
   <script>
     (function () {
       var els = document.querySelectorAll('.reveal');
