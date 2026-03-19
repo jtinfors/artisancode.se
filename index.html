@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#1b1b1b">
   <script type="application/ld+json">
     {
      "@context": "https://schema.org",
@@ -24,29 +25,52 @@
   <meta property="og:title" content="Artisan Code – NON-AI & Web Development Studio">
   <meta property="og:description" content="AI-last product studio building custom software and automation.">
   <link rel="canonical" href="https://artisancode.se/" />
+  <script>
+    /* Restore saved theme before first paint to prevent flash */
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') {
+        document.documentElement.style.backgroundColor = '#fffdf8';
+      }
+    })();
+  </script>
 </head>
 <body>
+  <script>
+    /* Apply saved theme immediately */
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') {
+        document.body.classList.add('light-theme');
+        document.querySelector('meta[name="theme-color"]').content = '#fffdf8';
+      }
+    })();
+  </script>
 
   <header class="site-header">
     <div class="container">
       <div class="logo">
-        <span class="logo-mark">&#9632;</span>
+        <span class="logo-mark">AC</span>
         <span class="logo-text">Artisan Code</span>
       </div>
-      <nav class="navigation">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-right">
+        <nav class="navigation">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">Light mode</button>
+      </div>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="tagline">Zero AI — Est. 2025</p>
+        <p class="tagline">100% Human-Written Code</p>
         <div class="typewriter-rotate">
           <h1><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
         </div>
@@ -54,7 +78,10 @@
           In the age of AI slop we offer premium top-notch handwritten code made by real humans.
           AI can generate a thousand functions before your drop coffee brews. None of them will carry a point of view, a considered trade-off, or the scar tissue of hard-won experience. Ours do — and the coffee is better too.
         </p>
-        <a href="#contact" class="btn">Start a project</a>
+        <div class="hero-buttons">
+          <a href="#services" class="btn">Our services</a>
+          <a href="#contact" class="btn-outline">Contact us</a>
+        </div>
       </div>
       <div class="hero-visual">
         <figure class="hero-image">
@@ -68,6 +95,7 @@
     </div>
   </section>
 
+  <!-- Carousel script -->
   <script>
     (function () {
       var INTERVAL = 9000;
@@ -122,53 +150,29 @@
     })();
   </script>
 
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>Handwritten code</span>
-      <span>No AI</span>
-      <span>Locally sourced logic</span>
-      <span>Absurdly expensive</span>
-      <span>Artisanally crafted</span>
-      <span>Zero autocomplete</span>
-      <span>Human origin certified</span>
-      <span>Bugs included free</span>
-      <span>Handwritten code</span>
-      <span>No AI</span>
-      <span>Locally sourced logic</span>
-      <span>Absurdly expensive</span>
-      <span>Artisanally crafted</span>
-      <span>Zero autocomplete</span>
-      <span>Human origin certified</span>
-      <span>Bugs included free</span>
-    </div>
-  </div>
-
+  <!-- SERVICES -->
   <section id="services" class="services">
     <div class="container">
-      <p class="section-label">What we do</p>
-      <h2>Services</h2>
-      <p class="section-intro">Every project receives the full weight of one human's attention, questionable judgment, and unreasonable coffee intake.</p>
+      <p class="section-eyebrow reveal">What we do</p>
+      <h2 class="section-heading reveal">Services</h2>
+      <p class="section-desc reveal">Every project receives the full weight of one human's attention, questionable judgment, and unreasonable coffee intake.</p>
       <div class="card-grid">
-        <div class="card">
-          <span class="card-number">01</span>
+        <div class="card reveal reveal-delay-1">
           <div class="card-icon">&#9998;</div>
           <h3>Artisanal Development</h3>
           <p>Every closure handcrafted from locally sourced logic. No AI, no autocomplete, no spelcheck. We always work in a team of 8 with genuine iBook G3's, hi-fi headphones, and unreasonable amounts of coffee.</p>
         </div>
-        <div class="card">
-          <span class="card-number">02</span>
+        <div class="card reveal reveal-delay-2">
           <div class="card-icon">&#9881;</div>
           <h3>Technical Consulting</h3>
           <p>We will look at your AI-generated codebase, sigh heavily, and then offer advice you could have gotten from ChatGPT for free.</p>
         </div>
-        <div class="card">
-          <span class="card-number">03</span>
+        <div class="card reveal reveal-delay-3">
           <div class="card-icon">&#9878;</div>
           <h3>Legacy Restoration</h3>
           <p>Your AI-created code is slop! We will lovingly refactor it by hand, introducing exciting new bugs that no AI would ever think of.</p>
         </div>
-        <div class="card">
-          <span class="card-number">04</span>
+        <div class="card reveal reveal-delay-4">
           <div class="card-icon">&#9997;</div>
           <h3>Traditional Web Development</h3>
           <p>We build websites the old way — HTML typed by hand, CSS written character by character, and JavaScript composed with the quiet focus of a monk illuminating a manuscript. No frameworks harmed. No Copilot consulted.</p>
@@ -177,10 +181,28 @@
     </div>
   </section>
 
+  <!-- IMAGE + TEXT SPLIT -->
+  <section class="split-section">
+    <div class="container">
+      <div class="split-image reveal">
+        <img src="./images/Gemini_Generated_Image_7pctj97pctj97pct.png" alt="Artisan Code at work writing code on paper">
+      </div>
+      <div class="reveal">
+        <p class="section-eyebrow">Our approach</p>
+        <h2 class="section-heading">Code is a craft, not a commodity</h2>
+        <p class="section-desc">While others are racing to automate everything, we're going the other way. Every function is considered. Every variable is named with intent. Every bug is a genuine human expression that no neural network could reproduce.</p>
+        <a href="#philosophy" class="btn-outline">Read our philosophy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
   <section id="pricing" class="pricing">
     <div class="container">
-      <p class="section-label">Investment</p>
-      <div class="pricing-block">
+      <p class="section-eyebrow reveal">Investment</p>
+      <h2 class="section-heading reveal">Pricing</h2>
+      <p class="section-desc reveal">Premium things cost premium prices. That's how premium works.</p>
+      <div class="pricing-block reveal">
         <p class="pricing-label">Hourly rate starting as low as</p>
         <p class="pricing-amount">$1,000</p>
         <ul class="pricing-details">
@@ -194,24 +216,39 @@
     </div>
   </section>
 
+  <!-- IMAGE + TEXT SPLIT (reversed) -->
+  <section class="split-section reverse">
+    <div class="container">
+      <div class="split-image reveal">
+        <img src="./images/Gemini_Generated_Image_jr6apcjr6apcjr6a.png" alt="The Artisan Code team doing mob programming">
+      </div>
+      <div class="reveal">
+        <p class="section-eyebrow">How we work</p>
+        <h2 class="section-heading">Mob programming, because one person typing is too efficient</h2>
+        <p class="section-desc">We write code in groups of eight. One person types. Seven people watch. Occasionally someone suggests a variable name. This is peak engineering. And yes, you're billed for all eight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
   <section id="philosophy" class="philosophy">
     <div class="container">
-      <p class="section-label">How we think</p>
-      <h2>Philosophy</h2>
+      <p class="section-eyebrow reveal">How we think</p>
+      <h2 class="section-heading reveal">Philosophy</h2>
       <div class="philosophy-grid">
-        <div class="philosophy-item" data-num="I">
+        <div class="philosophy-item reveal reveal-delay-1">
           <h3>Measure twice, deploy Friday at 5 PM</h3>
           <p>An AI would plan, execute, test, and deploy in minutes. We prefer the human way: three meetings, a whiteboard session, two existential crises, and a deploy that breaks staging.</p>
         </div>
-        <div class="philosophy-item" data-num="II">
+        <div class="philosophy-item reveal reveal-delay-2">
           <h3>No particle board</h3>
           <p>AI-generated code is the IKEA furniture of software — cheap, fast, and it works. We reject that. Our code is the hand-carved oak cabinet that takes six months and doesn't quite close properly.</p>
         </div>
-        <div class="philosophy-item" data-num="III">
+        <div class="philosophy-item reveal reveal-delay-3">
           <h3>Honest mistakes</h3>
           <p>When an AI writes a bug, it's a "hallucination." When we write a bug, it's a deeply personal creative expression. You can't automate that kind of character!</p>
         </div>
-        <div class="philosophy-item" data-num="IV">
+        <div class="philosophy-item reveal reveal-delay-4">
           <h3>One craftsman, questionable velocity</h3>
           <p>You work directly with us. We don't scale. We can only process one repo at a time. We need lunch breaks and sometimes we just stare out the window. This is the premium experience.</p>
         </div>
@@ -219,92 +256,85 @@
     </div>
   </section>
 
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Certified human</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Artisan grade</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Premium slop-free</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Handcrafted with love</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Certified human</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Artisan grade</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Premium slop-free</span>
-      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Handcrafted with love</span>
-    </div>
-  </div>
-
+  <!-- REVIEWS -->
   <section id="reviews" class="reviews">
     <div class="container">
-      <p class="section-label">Testimonials</p>
-      <h2>What Our Clients Say</h2>
-      <p class="reviews-subtitle">100% real testimonials from 100% real humans who paid 100% real money</p>
+      <p class="section-eyebrow reveal">Testimonials</p>
+      <h2 class="section-heading reveal">What our clients say</h2>
+      <p class="reviews-subtitle reveal">100% real testimonials from 100% real humans who paid 100% real money</p>
       <div class="reviews-grid">
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-1">
           <p class="review-text">"I asked for a landing page. It took four months and cost more than my car. But when I view source, I can <em>feel</em> the humanity in every div. Worth it."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Magnus K., Startup Founder</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Magnus K., Startup Founder</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-2">
           <p class="review-text">"The code arrived on a USB stick, wrapped in brown paper and sealed with actual wax. I cried. My CTO cried. The code didn't compile, but that's not the point."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Linnea S., Product Manager</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Linnea S., Product Manager</cite>
         </blockquote>
-        <blockquote class="review-card">
-          <p class="review-text">"We used to use GitHub Copilot. Now we use Artisan Code. Our velocity dropped 97% but our team morale is through the roof. There's something beautiful about watching a single man type 'console.log' for eight hours."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Erik B., Engineering Lead</cite>
+        <blockquote class="review-card reveal reveal-delay-3">
+          <p class="review-text">"We used to use GitHub Copilot. Now we use Artisan Code. Our velocity dropped 97% but our team morale is through the roof."</p>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Erik B., Engineering Lead</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-1">
           <p class="review-text">"I showed the invoice to my investors. They assumed it was a Series B expense. It was for a contact form. A really, really nice contact form."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Astrid W., CEO</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Astrid W., CEO</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-2">
           <p class="review-text">"Each variable name tells a story. Some of them are even spelled correctly. You simply cannot get this level of authenticity from a machine."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Johan F., Senior Developer</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Johan F., Senior Developer</cite>
         </blockquote>
-        <blockquote class="review-card">
-          <p class="review-text">"They refactored our entire authentication module by hand. It took six weeks. ChatGPT could have done it in 30 seconds, but ours has <em>character</em>. Also three undocumented edge cases, which we consider features."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Frida N., Tech Lead</cite>
+        <blockquote class="review-card reveal reveal-delay-3">
+          <p class="review-text">"They refactored our entire authentication module by hand. It took six weeks. ChatGPT could have done it in 30 seconds, but ours has <em>character</em>."</p>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Frida N., Tech Lead</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-1">
           <p class="review-text">"I specifically asked for no AI. They delivered a React app where every component was lovingly typed from memory. Half the imports are wrong, but you can tell a real person was behind each one."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Lars P., Agency Owner</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Lars P., Agency Owner</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-2">
           <p class="review-text">"I put their code through an AI detector and it came back 100% human. I put it through a linter and it came back 100% errors. Honestly? I respect it."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Saga M., QA Engineer</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Saga M., QA Engineer</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-3">
           <p class="review-text">"We received weekly progress updates written on actual postcards. The project was three months late but every postcard smelled like fresh coffee and conviction."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Henrik A., Project Manager</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Henrik A., Project Manager</cite>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card reveal reveal-delay-1">
           <p class="review-text">"Our competitors ship features daily with AI. We ship quarterly with Artisan Code. But our code has a soul. And a surprisingly high number of TODO comments."</p>
-          <cite class="review-author">&#9733;&#9733;&#9733;&#9733;&#9733; &mdash; Elsa R., CTO</cite>
+          <cite class="review-author"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Elsa R., CTO</cite>
         </blockquote>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="container">
-      <p class="section-label">Get in touch</p>
-      <h2>Let's build something (slowly)</h2>
-      <p>Have a project that an AI could finish before you're done reading this sentence? Let us do it instead. It'll take longer and cost more, but you'll feel something. Probably regret...</p>
-      <a href="mailto:jens.tinfors@gmail.com" class="btn">hello@artisancode.se</a>
+      <p class="section-eyebrow reveal">Get in touch</p>
+      <h2 class="reveal">Let's build something (slowly)</h2>
+      <p class="reveal">Have a project that an AI could finish before you're done reading this sentence? Let us do it instead. It'll take longer and cost more, but you'll feel something. Probably regret...</p>
+      <div class="hero-buttons reveal" style="justify-content: center;">
+        <a href="mailto:jens.tinfors@gmail.com" class="btn">hello@artisancode.se</a>
+        <a href="#services" class="btn-outline">Explore services</a>
+      </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Artisan Code AB. Handmade in Sweden using only Vim and vt100</p>
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Artisan Code AB. Handmade in Sweden.</p>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Typewriter -->
   <script>
     (function () {
       var phrases = [
@@ -347,21 +377,50 @@
     })();
   </script>
 
+  <!-- Scroll reveal -->
   <script>
-    /* Fade-in on scroll */
     (function () {
-      var els = document.querySelectorAll('.section-label, .card, .philosophy-item, .review-card, .pricing-block');
-      els.forEach(function (el) { el.classList.add('fade-in'); });
-
+      var els = document.querySelectorAll('.reveal');
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
       els.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+  <!-- Theme toggle -->
+  <script>
+    (function () {
+      var btn = document.getElementById('themeToggle');
+      var meta = document.querySelector('meta[name="theme-color"]');
+
+      function applyTheme(light) {
+        if (light) {
+          document.body.classList.add('light-theme');
+          btn.textContent = 'Dark mode';
+          meta.content = '#fffdf8';
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.body.classList.remove('light-theme');
+          btn.textContent = 'Light mode';
+          meta.content = '#1b1b1b';
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+
+      /* Set initial button text based on current theme */
+      if (document.body.classList.contains('light-theme')) {
+        btn.textContent = 'Dark mode';
+      }
+
+      btn.addEventListener('click', function () {
+        applyTheme(!document.body.classList.contains('light-theme'));
+      });
     })();
   </script>
 
