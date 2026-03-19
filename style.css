@@ -400,6 +400,56 @@ nav a:hover {
   font-size: 0.95rem;
 }
 
+/* --- Reviews --- */
+.reviews {
+  padding: 5rem 0;
+  background-color: var(--linen);
+}
+
+.reviews-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.review-card {
+  background: var(--cream);
+  border: 1px solid var(--parchment);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.25s;
+}
+
+.review-card:hover {
+  box-shadow: 0 4px 20px rgba(92, 64, 51, 0.08);
+}
+
+.review-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+.review-author {
+  font-size: 0.82rem;
+  font-style: normal;
+  color: var(--brass);
+  letter-spacing: 0.03em;
+}
+
 /* --- Contact --- */
 .contact {
   padding: 5rem 0;
