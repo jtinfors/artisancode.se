@@ -729,7 +729,7 @@ nav a:hover {
 
 @media (max-width: 640px) {
   .site-header .container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.75rem;
   }
 
@@ -738,6 +738,7 @@ nav a:hover {
   }
 
   nav {
+    display: none;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
