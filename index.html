@@ -30,7 +30,7 @@
   <header class="site-header">
     <div class="container">
       <div class="logo">
-        <span class="logo-mark">&#9744;</span>
+        <span class="logo-mark">&#9632;</span>
         <span class="logo-text">Artisan Code</span>
       </div>
       <nav class="navigation">
@@ -45,136 +45,133 @@
 
   <section class="hero">
     <div class="container">
-      <p class="tagline">Zero AI!</p>
-      <div class="typewriter-rotate">
-        <h1><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
-      </div>
-      <p class="hero-sub">
-        In the age of AI slop we offer premium top-notch handwritten code made by real humans!!
-        <br />
-        AI can generate a thousand functions before your drop coffee brews. None of them will carry a point of view, a considered trade-off, or the scar tissue of hard-won experience. Ours do — and the coffee is better too!
-      </p>
-      <figure class="hero-image">
-        <div class="carousel" id="heroCarousel">
-          <img class="carousel-img" src="./images/Gemini_Generated_Image_32b7q432b7q432b7.png" alt="The founder at work, coding like its 1999">
-          <figcaption class="figcaption">Compiling...</figcaption>
+      <div class="hero-content">
+        <p class="tagline">Zero AI — Est. 2025</p>
+        <div class="typewriter-rotate">
+          <h1><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
         </div>
-        <div class="carousel-progress"><div class="carousel-progress-bar" id="carouselProgressBar"></div></div>
-      </figure>
-      <script>
-        (function () {
-          var INTERVAL = 9000;
-          var images = [
-            {
-              image: "./images/Gemini_Generated_Image_32b7q432b7q432b7.png",
-              text: "Compiling.."
-            },
-            {
-              image: "./images/Gemini_Generated_Image_79h5dr79h5dr79h5.png",
-              text: "Hard at werk!"
-            },
-            {
-              image: "./images/Gemini_Generated_Image_yaxc8eyaxc8eyaxc.png",
-              text: "This shit has never werked.."
-            },
-            {
-              image: "./images/Gemini_Generated_Image_7pctj97pctj97pct.png",
-              text: "Code is best written on paper."
-            },
-            {
-              image: "./images/Gemini_Generated_Image_jr6apcjr6apcjr6a.png",
-              text: "Code is written in a mob. That way we can charge more"
-            },
-            {
-              image: "./images/Gemini_Generated_Image_3apy9z3apy9z3apy.png",
-              text: "Every now and then we work from a hotel in spain, tab's on you!"
-            },
-            {
-              image: "./images/Gemini_Generated_Image_muaslrmuaslrmuas.png",
-              text: "Delivering code to customer, 6 months after initially promised deadline!"
-            }
-          ];
-          var current = 0;
-          var img = document.querySelector("#heroCarousel .carousel-img");
-          var bar = document.getElementById("carouselProgressBar");
-
-          // Preload all images into browser cache
-          var cache = images.map(function (item) {
-            var preload = new Image();
-            preload.src = item.image;
-            return preload;
-          });
-
-          function resetProgress() {
-            bar.style.transition = "none";
-            bar.style.width = "0%";
-            requestAnimationFrame(function () {
-              requestAnimationFrame(function () {
-                bar.style.transition = "width " + INTERVAL + "ms linear";
-                bar.style.width = "100%";
-              });
-            });
-          }
-
-          function show(index) {
-            current = (index + images.length) % images.length;
-            img.style.opacity = "0";
-            var cached = cache[current];
-            function swap() {
-              img.src = cached.src;
-              document.querySelector(".figcaption").innerHTML = images[current].text;
-              // Wait a frame so the new src is set, then fade in
-              requestAnimationFrame(function () {
-                img.style.opacity = "1";
-              });
-            }
-            // Wait for fade-out (600ms matches CSS transition)
-            setTimeout(function () {
-              if (cached.complete) {
-                swap();
-              } else {
-                cached.onload = swap;
-              }
-            }, 600);
-            resetProgress();
-          }
-
-          resetProgress();
-          setInterval(function () { show(current + 1); }, INTERVAL);
-        })();
-      </script>
+        <p class="hero-sub">
+          In the age of AI slop we offer premium top-notch handwritten code made by real humans.
+          AI can generate a thousand functions before your drop coffee brews. None of them will carry a point of view, a considered trade-off, or the scar tissue of hard-won experience. Ours do — and the coffee is better too.
+        </p>
+        <a href="#contact" class="btn">Start a project</a>
+      </div>
+      <div class="hero-visual">
+        <figure class="hero-image">
+          <div class="carousel" id="heroCarousel">
+            <img class="carousel-img" src="./images/Gemini_Generated_Image_32b7q432b7q432b7.png" alt="The founder at work, coding like its 1999">
+            <figcaption class="figcaption">Compiling...</figcaption>
+          </div>
+          <div class="carousel-progress"><div class="carousel-progress-bar" id="carouselProgressBar"></div></div>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <div class="divider">
-    <div class="container">
-      <svg viewBox="0 0 800 2" class="grain-line"><line x1="0" y1="1" x2="800" y2="1" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 6"/></svg>
+  <script>
+    (function () {
+      var INTERVAL = 9000;
+      var images = [
+        { image: "./images/Gemini_Generated_Image_32b7q432b7q432b7.png", text: "Compiling.." },
+        { image: "./images/Gemini_Generated_Image_79h5dr79h5dr79h5.png", text: "Hard at werk!" },
+        { image: "./images/Gemini_Generated_Image_yaxc8eyaxc8eyaxc.png", text: "This shit has never werked.." },
+        { image: "./images/Gemini_Generated_Image_7pctj97pctj97pct.png", text: "Code is best written on paper." },
+        { image: "./images/Gemini_Generated_Image_jr6apcjr6apcjr6a.png", text: "Code is written in a mob. That way we can charge more" },
+        { image: "./images/Gemini_Generated_Image_3apy9z3apy9z3apy.png", text: "Every now and then we work from a hotel in spain, tab's on you!" },
+        { image: "./images/Gemini_Generated_Image_muaslrmuaslrmuas.png", text: "Delivering code to customer, 6 months after initially promised deadline!" }
+      ];
+      var current = 0;
+      var img = document.querySelector("#heroCarousel .carousel-img");
+      var bar = document.getElementById("carouselProgressBar");
+
+      var cache = images.map(function (item) {
+        var preload = new Image();
+        preload.src = item.image;
+        return preload;
+      });
+
+      function resetProgress() {
+        bar.style.transition = "none";
+        bar.style.width = "0%";
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            bar.style.transition = "width " + INTERVAL + "ms linear";
+            bar.style.width = "100%";
+          });
+        });
+      }
+
+      function show(index) {
+        current = (index + images.length) % images.length;
+        img.style.opacity = "0";
+        var cached = cache[current];
+        function swap() {
+          img.src = cached.src;
+          document.querySelector(".figcaption").innerHTML = images[current].text;
+          requestAnimationFrame(function () { img.style.opacity = "1"; });
+        }
+        setTimeout(function () {
+          if (cached.complete) { swap(); }
+          else { cached.onload = swap; }
+        }, 600);
+        resetProgress();
+      }
+
+      resetProgress();
+      setInterval(function () { show(current + 1); }, INTERVAL);
+    })();
+  </script>
+
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Handwritten code</span>
+      <span>No AI</span>
+      <span>Locally sourced logic</span>
+      <span>Absurdly expensive</span>
+      <span>Artisanally crafted</span>
+      <span>Zero autocomplete</span>
+      <span>Human origin certified</span>
+      <span>Bugs included free</span>
+      <span>Handwritten code</span>
+      <span>No AI</span>
+      <span>Locally sourced logic</span>
+      <span>Absurdly expensive</span>
+      <span>Artisanally crafted</span>
+      <span>Zero autocomplete</span>
+      <span>Human origin certified</span>
+      <span>Bugs included free</span>
     </div>
   </div>
 
   <section id="services" class="services">
     <div class="container">
+      <p class="section-label">What we do</p>
       <h2>Services</h2>
+      <p class="section-intro">Every project receives the full weight of one human's attention, questionable judgment, and unreasonable coffee intake.</p>
       <div class="card-grid">
         <div class="card">
+          <span class="card-number">01</span>
           <div class="card-icon">&#9998;</div>
           <h3>Artisanal Development</h3>
           <p>Every closure handcrafted from locally sourced logic. No AI, no autocomplete, no spelcheck. We always work in a team of 8 with genuine iBook G3's, hi-fi headphones, and unreasonable amounts of coffee.</p>
         </div>
         <div class="card">
+          <span class="card-number">02</span>
           <div class="card-icon">&#9881;</div>
           <h3>Technical Consulting</h3>
           <p>We will look at your AI-generated codebase, sigh heavily, and then offer advice you could have gotten from ChatGPT for free.</p>
         </div>
         <div class="card">
+          <span class="card-number">03</span>
           <div class="card-icon">&#9878;</div>
           <h3>Legacy Restoration</h3>
-          <p>Your AI-created code is slop!<br /> We will lovingly refactor it by hand, introducing exciting new bugs that no AI would ever think of.</p>
+          <p>Your AI-created code is slop! We will lovingly refactor it by hand, introducing exciting new bugs that no AI would ever think of.</p>
         </div>
         <div class="card">
+          <span class="card-number">04</span>
           <div class="card-icon">&#9997;</div>
           <h3>Traditional Web Development</h3>
-          <p>We build websites the old way — HTML typed by hand, CSS written character by character, and JavaScript composed with the quiet focus of a monk illuminating a manuscript. No frameworks harmed. No Copilot consulted. Just a text editor, a browser, and a healthy respect for the craft.</p>
+          <p>We build websites the old way — HTML typed by hand, CSS written character by character, and JavaScript composed with the quiet focus of a monk illuminating a manuscript. No frameworks harmed. No Copilot consulted.</p>
         </div>
       </div>
     </div>
@@ -182,7 +179,7 @@
 
   <section id="pricing" class="pricing">
     <div class="container">
-      <h2>Pricing</h2>
+      <p class="section-label">Investment</p>
       <div class="pricing-block">
         <p class="pricing-label">Hourly rate starting as low as</p>
         <p class="pricing-amount">$1,000</p>
@@ -192,37 +189,60 @@
           <li>Typos inculded at no extra charge</li>
           <li>Just like the craft beer that we brew in our basement, the code is done when it is done!</li>
         </ul>
-        <a href="#contact" class="btn">Get started today!</a>
+        <a href="#contact" class="btn">Get started today</a>
       </div>
     </div>
   </section>
 
   <section id="philosophy" class="philosophy">
     <div class="container">
+      <p class="section-label">How we think</p>
       <h2>Philosophy</h2>
       <div class="philosophy-grid">
-        <div class="philosophy-item">
+        <div class="philosophy-item" data-num="I">
           <h3>Measure twice, deploy Friday at 5 PM</h3>
           <p>An AI would plan, execute, test, and deploy in minutes. We prefer the human way: three meetings, a whiteboard session, two existential crises, and a deploy that breaks staging.</p>
         </div>
-        <div class="philosophy-item">
+        <div class="philosophy-item" data-num="II">
           <h3>No particle board</h3>
           <p>AI-generated code is the IKEA furniture of software — cheap, fast, and it works. We reject that. Our code is the hand-carved oak cabinet that takes six months and doesn't quite close properly.</p>
         </div>
-        <div class="philosophy-item">
+        <div class="philosophy-item" data-num="III">
           <h3>Honest mistakes</h3>
-          <p>When an AI writes a bug, it's a "hallucination." When We write a bug, it's a deeply personal creative expression. You can't automate that kind of character!</p>
+          <p>When an AI writes a bug, it's a "hallucination." When we write a bug, it's a deeply personal creative expression. You can't automate that kind of character!</p>
         </div>
-        <div class="philosophy-item">
+        <div class="philosophy-item" data-num="IV">
           <h3>One craftsman, questionable velocity</h3>
-          <p>You work directly with us. We don't scale. We can only process one repo at a time. We need lunch breaks and sometimes We just stare out the window. This is the premium experience.</p>
+          <p>You work directly with us. We don't scale. We can only process one repo at a time. We need lunch breaks and sometimes we just stare out the window. This is the premium experience.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Certified human</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Artisan grade</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Premium slop-free</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Handcrafted with love</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Certified human</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Artisan grade</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Premium slop-free</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Handcrafted with love</span>
+    </div>
+  </div>
+
   <section id="reviews" class="reviews">
     <div class="container">
+      <p class="section-label">Testimonials</p>
       <h2>What Our Clients Say</h2>
       <p class="reviews-subtitle">100% real testimonials from 100% real humans who paid 100% real money</p>
       <div class="reviews-grid">
@@ -270,14 +290,9 @@
     </div>
   </section>
 
-  <div class="divider">
-    <div class="container">
-      <svg viewBox="0 0 800 2" class="grain-line"><line x1="0" y1="1" x2="800" y2="1" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 6"/></svg>
-    </div>
-  </div>
-
   <section id="contact" class="contact">
     <div class="container">
+      <p class="section-label">Get in touch</p>
       <h2>Let's build something (slowly)</h2>
       <p>Have a project that an AI could finish before you're done reading this sentence? Let us do it instead. It'll take longer and cost more, but you'll feel something. Probably regret...</p>
       <a href="mailto:jens.tinfors@gmail.com" class="btn">hello@artisancode.se</a>
@@ -286,17 +301,17 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Artisan Code. Handmade in Sweden using only Vim and vt100</p>
+      <p>&copy; 2026 Artisan Code AB. Handmade in Sweden using only Vim and vt100</p>
     </div>
   </footer>
 
   <script>
     (function () {
       var phrases = [
-        "Real code By real humans!",
-        "Every semicolon lovingly placed by a human hand.",
-        "Handicrafted code by handy humans!",
-        "Code exclusivly crafted by real coders"
+        "Real code by real humans.",
+        "Every semicolon lovingly placed by hand.",
+        "Handcrafted code by handy humans.",
+        "Code exclusively crafted by real coders."
       ];
       var el = document.getElementById('typewriter-text');
       var current = 0;
@@ -312,12 +327,18 @@
             el.textContent = phrases[current].substring(0, charIndex + 1);
             charIndex++;
             setTimeout(tick, TYPING_SPEED);
+          <!--} else {-->
+            <!--setTimeout(function () { typing = false; tick(); }, PAUSE_AFTER);-->
           }
         } else {
           if (charIndex > 0) {
             charIndex--;
             el.textContent = phrases[current].substring(0, charIndex);
             setTimeout(tick, ERASE_SPEED);
+          <!--} else {-->
+            <!--current = (current + 1) % phrases.length;-->
+            <!--typing = true;-->
+            <!--setTimeout(tick, 400);-->
           }
         }
       }
@@ -325,5 +346,24 @@
       tick();
     })();
   </script>
+
+  <script>
+    /* Fade-in on scroll */
+    (function () {
+      var els = document.querySelectorAll('.section-label, .card, .philosophy-item, .review-card, .pricing-block');
+      els.forEach(function (el) { el.classList.add('fade-in'); });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      els.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
 </body>
 </html>
